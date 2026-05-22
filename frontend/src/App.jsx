@@ -240,6 +240,8 @@ function App() {
             margin: "8px 0 4px",
             fontSize: "1rem",
             color: "var(--text-2)",
+            textAlign: "center",
+            width: "100%",
           }}
         >
           Ciao, <strong style={{ color: "var(--text)" }}>{utente.nome}</strong>{" "}
@@ -326,49 +328,33 @@ function App() {
 
             <div className="input-group">
               <label>Stato</label>
-              <select
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
-              >
-                <option value="nuovo">
-                  Nuovo — con cartellino o mai indossato
-                </option>
-                <option value="buono">Buono — usato poco, senza difetti</option>
-                <option value="usato">Usato — con segni d&apos;usura</option>
-              </select>
+              <div className="pill-toggle">
+                {[
+                  { value: "nuovo", label: "Nuovo" },
+                  { value: "buono", label: "Buono" },
+                  { value: "usato", label: "Usato" },
+                ].map((opt) => (
+                  <button
+                    key={opt.value}
+                    type="button"
+                    onClick={() => setStatus(opt.value)}
+                    className={
+                      status === opt.value
+                        ? "toggle-option active"
+                        : "toggle-option"
+                    }
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="input-group">
               <label>Foto del capo</label>
-              <div className="image-source-toggle">
-                <button
-                  type="button"
-                  onClick={() => setImageSource("file")}
-                  className={
-                    imageSource === "file"
-                      ? "toggle-option active"
-                      : "toggle-option"
-                  }
-                >
-                  📁 Galleria
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setImageSource("camera")}
-                  className={
-                    imageSource === "camera"
-                      ? "toggle-option active"
-                      : "toggle-option"
-                  }
-                >
-                  📷 Fotocamera
-                </button>
-              </div>
               <input
-                key={imageSource}
                 type="file"
                 accept="image/*"
-                capture={imageSource === "camera" ? "environment" : undefined}
                 onChange={handleImageChange}
                 required
               />
