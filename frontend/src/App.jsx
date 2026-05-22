@@ -103,6 +103,7 @@ function App() {
       setPreviewUrl("");
       return;
     }
+
     const allowedTypes = ["image/jpeg", "image/png", "image/webp", "image/gif"];
     if (!allowedTypes.includes(file.type)) {
       setError("Formato non supportato. Usa JPG, PNG, WEBP o GIF.");
@@ -114,17 +115,43 @@ function App() {
       e.target.value = "";
       return;
     }
+
     setError("");
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const fullDataUrl = reader.result;
-      const [meta, base64] = fullDataUrl.split(",");
+
+    const objectUrl = URL.createObjectURL(file);
+    const img = new Image();
+
+    img.onload = () => {
+      const MAX_SIZE = 1024;
+      let { width, height } = img;
+
+      if (width > MAX_SIZE || height > MAX_SIZE) {
+        if (width > height) {
+          height = Math.round((height / width) * MAX_SIZE);
+          width = MAX_SIZE;
+        } else {
+          width = Math.round((width / height) * MAX_SIZE);
+          height = MAX_SIZE;
+        }
+      }
+
+      const canvas = document.createElement("canvas");
+      canvas.width = width;
+      canvas.height = height;
+      canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+
+      const compressed = canvas.toDataURL("image/jpeg", 0.75);
+      const [meta, base64] = compressed.split(",");
       const mimeMatch = meta.match(/data:(.*);base64/);
+
       setImageBase64(base64);
       setImageMimeType(mimeMatch ? mimeMatch[1] : "image/jpeg");
-      setPreviewUrl(fullDataUrl);
+      setPreviewUrl(compressed);
+
+      URL.revokeObjectURL(objectUrl);
     };
-    reader.readAsDataURL(file);
+
+    img.src = objectUrl;
   };
 
   const handleSubmit = async (e) => {
