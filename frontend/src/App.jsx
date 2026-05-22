@@ -241,7 +241,6 @@ function App() {
             fontSize: "1rem",
             color: "var(--text-2)",
             textAlign: "center",
-            width: "100%",
           }}
         >
           Ciao, <strong style={{ color: "var(--text)" }}>{utente.nome}</strong>{" "}
