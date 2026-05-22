@@ -4,14 +4,14 @@ import "./App.css";
 const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:5001";
 
 function App() {
-  // ─── Auth ────────────────────────────────────────────────────────────────
+  // Auth
   const [utente, setUtente] = useState(null);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginNome, setLoginNome] = useState("");
   const [loginError, setLoginError] = useState("");
   const [loginLoading, setLoginLoading] = useState(false);
 
-  // ─── Valutazione ─────────────────────────────────────────────────────────
+  // Valuation
   const [category, setCategory] = useState("");
   const [brand, setBrand] = useState("");
   const [status, setStatus] = useState("buono");
@@ -23,7 +23,7 @@ function App() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
 
-  // ─── Cronologia ──────────────────────────────────────────────────────────
+  // History
   const [history, setHistory] = useState([]);
   const [showHistory, setShowHistory] = useState(false);
 
@@ -36,7 +36,7 @@ function App() {
     if (utente && showHistory) fetchHistory();
   }, [utente, showHistory]);
 
-  // ─── Login ───────────────────────────────────────────────────────────────
+  // Login
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoginError("");
@@ -71,7 +71,7 @@ function App() {
     setShowHistory(false);
   };
 
-  // ─── Cronologia ──────────────────────────────────────────────────────────
+  // History
   const fetchHistory = async () => {
     try {
       const res = await fetch(`${API_URL}/api/history/${utente.email}`);
@@ -82,7 +82,7 @@ function App() {
     }
   };
 
-  // ─── Valutazione ─────────────────────────────────────────────────────────
+  // Valuation
   const handleReset = () => {
     setCategory("");
     setBrand("");
@@ -173,7 +173,7 @@ function App() {
     }
   };
 
-  // ─── Login screen ─────────────────────────────────────────────────────────
+  // Login screen
   if (!utente) {
     return (
       <div className="app-container">
@@ -228,7 +228,7 @@ function App() {
     );
   }
 
-  // ─── App principale ───────────────────────────────────────────────────────
+  // Main
   return (
     <div className="app-container">
       <header className="app-header">
@@ -263,7 +263,7 @@ function App() {
         </div>
       </header>
 
-      {/* ─── Cronologia ─────────────────────────────────────────────────── */}
+      {/* History */}
       {showHistory && (
         <div className="card" style={{ maxWidth: 700, margin: "0 auto" }}>
           <h2>Le tue valutazioni</h2>
@@ -298,7 +298,7 @@ function App() {
         </div>
       )}
 
-      {/* ─── Valutazione ────────────────────────────────────────────────── */}
+      {/* Valuation */}
       {!showHistory && (
         <div className="grid-layout">
           <form onSubmit={handleSubmit} className="card">

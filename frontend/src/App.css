@@ -67,7 +67,7 @@ img {
   max-width: 100%;
 }
 
-/* ── Layout ───────────────────────────────────────────────── */
+/* Layout */
 .app-container {
   min-height: 100vh;
   padding: 36px 20px 56px;
@@ -102,7 +102,7 @@ img {
   font-weight: 300;
 }
 
-/* ── User bar ────────────────────────────────────────────── */
+/* User bar */
 .user-bar {
   display: flex;
   align-items: center;
@@ -122,7 +122,7 @@ img {
   color: var(--text);
 }
 
-/* ── Buttons ─────────────────────────────────────────────── */
+/* Buttons */
 .submit-btn {
   display: inline-flex;
   align-items: center;
@@ -180,7 +180,7 @@ img {
   box-shadow: var(--shadow-sm);
 }
 
-/* ── Grid ────────────────────────────────────────────────── */
+/* Grid */
 .grid-layout {
   max-width: 1100px;
   margin: 0 auto;
@@ -190,7 +190,7 @@ img {
   align-items: start;
 }
 
-/* ── Card ────────────────────────────────────────────────── */
+/* Card */
 .card,
 .result-panel {
   background: var(--surface);
@@ -210,7 +210,7 @@ img {
   letter-spacing: -0.2px;
 }
 
-/* ── Form ────────────────────────────────────────────────── */
+/* Form */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -267,7 +267,7 @@ img {
   background: var(--accent-bg);
 }
 
-/* ── Image preview ───────────────────────────────────────── */
+/* Image preview */
 .image-preview {
   margin: 4px 0 18px;
   border-radius: var(--radius);
@@ -281,7 +281,7 @@ img {
   object-fit: cover;
 }
 
-/* ── Error ───────────────────────────────────────────────── */
+/* Error */
 .error-text {
   margin: 14px 0 0;
   padding: 11px 14px;
@@ -292,7 +292,7 @@ img {
   border: 1px solid var(--error-bdr);
 }
 
-/* ── Empty / loading state ───────────────────────────────── */
+/* Empty / loading state */
 .status-message,
 .empty-text {
   display: flex;
@@ -308,7 +308,7 @@ img {
   font-size: 0.95rem;
 }
 
-/* ── Result ──────────────────────────────────────────────── */
+/* Result */
 .result-content {
   display: flex;
   flex-direction: column;
@@ -389,7 +389,7 @@ img {
   border: 1px solid var(--border);
 }
 
-/* ── History ─────────────────────────────────────────────── */
+/* History */
 .history-list {
   list-style: none;
   padding: 0;
@@ -431,7 +431,7 @@ img {
   color: var(--text-3);
 }
 
-/* ── Image source toggle ─────────────────────────────────── */
+/* Image source toggle */
 .image-source-toggle {
   display: flex;
   background: var(--surface-2);
@@ -467,7 +467,7 @@ img {
   box-shadow: 0 2px 8px var(--accent-glow);
 }
 
-/* ── Login ───────────────────────────────────────────────── */
+/* Login */
 .login-wrapper {
   display: flex;
   justify-content: center;
@@ -486,7 +486,7 @@ img {
   text-align: center;
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
+/* Responsive */
 @media (max-width: 900px) {
   .grid-layout {
     grid-template-columns: 1fr;

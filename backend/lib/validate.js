@@ -5,7 +5,7 @@ export function validateEvaluationJson(data) {
       message: "La risposta non è un oggetto JSON valido",
     };
 
-  // Caso immagine non pertinente
+  // If the image is irrelevant
   if (
     data.error_non_clothing === true &&
     typeof data.motivation === "string" &&

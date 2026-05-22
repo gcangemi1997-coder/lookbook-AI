@@ -6,8 +6,8 @@ if (!uri) {
   throw new Error("MONGODB_URI mancante nel file .env");
 }
 
-// In ambiente serverless la connessione viene riutilizzata tra le invocazioni
-// grazie alla cache del modulo — evita di aprire una nuova connessione ad ogni request
+// In a serverless environment, the connection is reused between invocations
+// thanks to the module’s cache — this avoids opening a new connection for every request
 let client;
 let clientPromise;
 

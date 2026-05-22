@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Chiama Gemini
+    // Call Gemini
     const evaluation = await callGemini({
       category,
       brand,
@@ -29,12 +29,12 @@ export default async function handler(req, res) {
       imageMimeType,
     });
 
-    // Se l'immagine non è un capo, restituisci subito senza salvare
+    // If the image is not a clothing, return immediately without saving
     if (evaluation.error_non_clothing) {
       return res.status(200).json(evaluation);
     }
 
-    // Salva la valutazione nel profilo utente su MongoDB
+    // Saves clothes valuations on MongoDB's user profile
     const db = await getDb();
     const utenti = db.collection("utenti");
     const key = email.toLowerCase().trim();
@@ -53,12 +53,9 @@ export default async function handler(req, res) {
     console.error("Errore evaluate:", err);
 
     if (err.message?.includes("503")) {
-      return res
-        .status(503)
-        .json({
-          error:
-            "Servizio AI momentaneamente non disponibile. Riprova tra poco.",
-        });
+      return res.status(503).json({
+        error: "Servizio AI momentaneamente non disponibile. Riprova tra poco.",
+      });
     }
 
     return res

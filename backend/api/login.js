@@ -2,7 +2,7 @@ import { getDb } from "../lib/db.js";
 import { setCors } from "../lib/cors.js";
 
 export default async function handler(req, res) {
-  // Gestione preflight CORS
+  // CORS preflight managing
   setCors(res);
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST")
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     const utenti = db.collection("utenti");
     const key = email.toLowerCase().trim();
 
-    // Crea l'utente se non esiste (upsert)
+    // Create user if not exists (upsert)
     await utenti.updateOne(
       { email: key },
       {

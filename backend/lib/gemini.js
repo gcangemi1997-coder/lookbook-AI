@@ -48,17 +48,17 @@ export async function callGemini({
   imageBase64,
   imageMimeType,
 }) {
-  const userPrompt = `Esegui la valutazione per questo capo d'abbigliamento:
-- Categoria: ${category}
-- Brand: ${brand}
-- Stato Attuale: ${status}
+  const userPrompt = `Please evaluate this item of clothing:
+  - Category: ${category}
+  - Brand: ${brand}
+  - Current status: ${status}
 
-Analizza anche l'immagine del capo.
+  Please also analyse the image of the item.
 
-ATTENZIONE:
-Rispondi ESCLUSIVAMENTE con l'oggetto JSON richiesto.
-Non inserire testo prima o dopo.
-Non usare blocchi di codice markdown con tre backtick.`.trim();
+  PLEASE NOTE:
+    Please respond ONLY with the required JSON object.
+    Do not include any text before or after it.
+    Do not use Markdown code blocks with three backticks.`.trim();
 
   const apiPayload = {
     systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
