@@ -3,9 +3,10 @@
 # 👗 LookBook AI
 
 ### AI-powered valuation tool for second-hand fashion items
+
 </div>
 
-***
+---
 
 ## ✨ Overview
 
@@ -13,7 +14,7 @@
 
 The project is part of a [Start2Impact](https://www.start2impact.it/) full-stack development course, built as an **AI Agents** module project.
 
-***
+---
 
 ## 🌐 Live Demo
 
@@ -21,7 +22,7 @@ Try the app live — no installation required:
 
 **👉 [LookBook AI Demo](https://lookbook-ai-27nj.vercel.app/)**
 
-***
+---
 
 ## 🚀 Features
 
@@ -32,39 +33,40 @@ Try the app live — no installation required:
 - 📋 **Evaluation history** — every result is saved per user and browsable from the UI
 - 🔁 **Retry logic** — the backend retries the Gemini call up to 2 times on transient failures
 - ✅ **Strict JSON validation** — every AI response is validated against a defined schema before being stored or returned
+- 📱 **Mobile image compression** — photos taken from mobile are automatically resized to 1024px and compressed to 75% quality before being sent, keeping the payload well within Vercel's serverless function limits
 
-***
+---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 
-| Technology  | Purpose |
-|---|---|
-| [React](https://react.dev/) | UI library |
-| [Vite](https://vitejs.dev/) | Build tool & dev server |
-| CSS custom | Styling (no external UI library) |
+| Technology                  | Purpose                          |
+| --------------------------- | -------------------------------- |
+| [React](https://react.dev/) | UI library                       |
+| [Vite](https://vitejs.dev/) | Build tool & dev server          |
+| CSS custom                  | Styling (no external UI library) |
 
 ### Backend
 
-| Technology | Purpose |
-|---|---|
-| [Node.js](https://nodejs.org/) | Runtime |
-| [Express](https://expressjs.com/) | HTTP server & routing |
-| [Google Gemini AI](https://ai.google.dev/)  | AI image evaluation |
-| [Mongoose](https://mongoosejs.com/) | MongoDB ODM |
-| [dotenv](https://github.com/motdotla/dotenv) | Environment variables |
-| [cors](https://github.com/expressjs/cors) | Cross-origin request handling |
-| [nodemon](https://nodemon.io/) | Dev auto-restart |
+| Technology                                   | Purpose                       |
+| -------------------------------------------- | ----------------------------- |
+| [Node.js](https://nodejs.org/)               | Runtime                       |
+| [Express](https://expressjs.com/)            | HTTP server & routing         |
+| [Google Gemini AI](https://ai.google.dev/)   | AI image evaluation           |
+| [Mongoose](https://mongoosejs.com/)          | MongoDB ODM                   |
+| [dotenv](https://github.com/motdotla/dotenv) | Environment variables         |
+| [cors](https://github.com/expressjs/cors)    | Cross-origin request handling |
+| [nodemon](https://nodemon.io/)               | Dev auto-restart              |
 
 ### Infrastructure
 
-| Service | Usage |
-|---|---|
+| Service                       | Usage                                                 |
+| ----------------------------- | ----------------------------------------------------- |
 | [Vercel](https://vercel.com/) | Backend serverless deployment (`vercel.json` present) |
-| MongoDB Atlas | Cloud database (via Mongoose) |
+| MongoDB Atlas                 | Cloud database (via Mongoose)                         |
 
-***
+---
 
 ## 🗂️ Project Structure
 
@@ -100,7 +102,7 @@ lookbook-AI/
 └── .gitignore
 ```
 
-***
+---
 
 ## ⚙️ Getting Started
 
@@ -169,16 +171,16 @@ npm run dev
 
 The frontend will be available at `http://localhost:5173`.
 
-***
+---
 
 ## 📡 API Reference
 
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/api/ping` | Health check |
-| `POST` | `/api/login` | Login or auto-register a user |
-| `POST` | `/api/evaluate` | Submit an item for AI evaluation |
-| `GET` | `/api/history/:email` | Retrieve a user's evaluation history |
+| Method | Endpoint              | Description                          |
+| ------ | --------------------- | ------------------------------------ |
+| `GET`  | `/api/ping`           | Health check                         |
+| `POST` | `/api/login`          | Login or auto-register a user        |
+| `POST` | `/api/evaluate`       | Submit an item for AI evaluation     |
+| `GET`  | `/api/history/:email` | Retrieve a user's evaluation history |
 
 ### `POST /api/evaluate` — Request body
 
@@ -204,7 +206,7 @@ The frontend will be available at `http://localhost:5173`.
 }
 ```
 
-***
+---
 
 ## 🚢 Deployment
 
@@ -217,14 +219,13 @@ cd frontend
 npm run build
 ```
 
-***
-
+---
 
 ## 👨‍💻 Author
 
 Built by **Giorgio Cangemi** as part of the [Start2Impact](https://www.start2impact.it/) Full Stack Developer course — AI Agents module.
 
-***
+---
 
 ## 📬 Contact
 
@@ -233,7 +234,7 @@ Feel free to reach out if you have any questions or feedback:
 - 💼 [LinkedIn — Giorgio Cangemi](https://www.linkedin.com/in/giorgio-cangemi-7b4b77172/)
 - 📧 [g.cangemi1997@gmail.com](mailto:g.cangemi1997@gmail.com)
 
-***
+---
 
 <div align="center">
   <sub>Made with ☕ and a lot of fashion sense.</sub>
