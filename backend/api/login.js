@@ -1,7 +1,9 @@
 import { getDb } from "../lib/db.js";
+import { setCors } from "../lib/cors.js";
 
 export default async function handler(req, res) {
   // Gestione preflight CORS
+  setCors(res);
   if (req.method === "OPTIONS") return res.status(200).end();
   if (req.method !== "POST")
     return res.status(405).json({ error: "Metodo non consentito" });
