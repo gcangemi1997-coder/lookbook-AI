@@ -95,12 +95,12 @@ img {
 }
 
 .app-header p {
-  margin: 10px auto 0;
+  margin: 10px auto 4;
   max-width: 560px;
   font-size: 1rem;
   color: var(--text-2);
   font-weight: 300;
-  text-align: center !important;
+  text-align: center;
 }
 
 /* User bar */

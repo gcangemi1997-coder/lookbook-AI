@@ -235,14 +235,7 @@ function App() {
         <h1>
           ♻️ LookBook <span>AI</span>
         </h1>
-        <p
-          style={{
-            margin: "8px 0 4px",
-            fontSize: "1rem",
-            color: "var(--text-2)",
-            textAlign: "center",
-          }}
-        >
+        <p>
           Ciao, <strong style={{ color: "var(--text)" }}>{utente.nome}</strong>{" "}
           👋
         </p>
