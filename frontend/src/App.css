@@ -100,7 +100,7 @@ img {
   font-size: 1rem;
   color: var(--text-2);
   font-weight: 300;
-  text-align: center;
+  text-align: center !important;
 }
 
 /* User bar */
