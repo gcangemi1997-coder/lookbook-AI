@@ -1,5 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "",
+  "installCommand": "npm install",
   "functions": {
     "api/**/*.js": {
       "memory": 512,
